@@ -2,6 +2,12 @@ import star from "../assets/Star 1.svg";
 // import sampleImg from "../images/katie-zaferes.jpg";
 
 export default function Card(props) {
+  let badgeText;
+  if (!props.available) {
+    badgeText = "SOLD OUT";
+  } else if (props.location.toLowerCase() === "online") {
+    badgeText = "ONLINE";
+  }
   return (
     <div className="card">
       <img className="card--img" src={props.imgSrc}></img>
@@ -17,9 +23,7 @@ export default function Card(props) {
           <strong>From ${props.price}</strong> / person
         </div>
       </div>
-      <div className="card--status">
-        {props.available ? "ONLINE" : "SOLD OUT"}
-      </div>
+      {!!badgeText && <div className="card--status">{badgeText}</div>}
     </div>
   );
 }
