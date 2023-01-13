@@ -12,6 +12,7 @@ import {
 
 const activities = [
   {
+    id: "1",
     title: "Life Lessons with Katie Zaferes",
     imageSrc: katieImg,
     rating: 5.0,
@@ -21,6 +22,7 @@ const activities = [
     available: false,
   },
   {
+    id: "2",
     title: "Learn Wedding Photography",
     imageSrc: weddingImg,
     rating: 5.0,
@@ -30,6 +32,7 @@ const activities = [
     available: true,
   },
   {
+    id: "3",
     title: "Group Mountain Bike Tour",
     imageSrc: mountainBikeImg,
     rating: 4.8,
@@ -46,18 +49,15 @@ function App() {
       <Navbar />
       <HeroSection />
       <section className="cards">
-        {activities.map((activity) => (
-          <Card
-            key={activity.title}
-            title={activity.title}
-            imgSrc={activity.imageSrc}
-            rating={activity.rating}
-            noOfRatings={activity.noOfRatings}
-            location={activity.location}
-            price={activity.price}
-            available={activity.available}
-          />
-        ))}
+        {activities.map((activity) => {
+          {
+            /* can also use spread to make it easier */
+            {
+              /* e.g <Card key={activity.id} {...activity} />; */
+            }
+          }
+          return <Card key={activity.id} activity={activity} />;
+        })}
       </section>
     </div>
   );
