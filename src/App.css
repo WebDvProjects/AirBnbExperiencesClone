@@ -115,6 +115,23 @@ section {
   }
 }
 
+@media screen and (width <= 450px) {
+  .hero-section .img-container {
+    min-width: 100%;
+    max-width: 100%;
+    width: 90%;
+  }
+
+  /* .hero-section .title {
+    font-size: 1.5rem;
+  }
+
+  .hero-section p {
+    max-width: 100%;
+    font-size: 1rem;
+  } */
+}
+
 section.cards {
   display: flex;
   overflow: hidden;
